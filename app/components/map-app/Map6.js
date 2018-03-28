@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Map, { Marker, GoogleApiWrapper } from '../map-lib'
-import {InfoWindow} from 'google-maps-react'
+import { InfoWindow } from '../map-lib/InfoWindow'
 
 const Map6 = React.createClass({
     getInitialState: function () {
@@ -22,6 +22,7 @@ const Map6 = React.createClass({
     },
 
     onInfoWindowClose: function () {
+        console.log('closed')
         this.setState({
             showingInfoWindow: false,
             activeMarker: null
@@ -65,8 +66,7 @@ const Map6 = React.createClass({
 
                 <InfoWindow
                     marker={this.state.activeMarker}
-                    visible={this.state.showingInfoWindow}
-                    onClose={this.onInfoWindowClose}>
+                    visible={this.state.showingInfoWindow}>
                     <div>
                         <h1>{this.state.selectedPlace.name}</h1>
                     </div>
