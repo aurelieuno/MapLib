@@ -6,16 +6,16 @@ import {
   Switch
 } from 'react-router-dom';
 
-import Home from "./Home";
-import Battle from "./Battle";
-import TimePicker from "./DatePicker";
-import ModalExample from "./ModalLess";
-import Form2 from "./Form2";
-import BuiltModal from "./BuiltModal";
-import NoStateDrawer from "./NoStateDrawer";
-import DrawerP from "./DrawerP";
-import StateDrawer from "./StateDrawer";
-import StateModal from "./StateModal";
+// import Home from "./Home";
+// import Battle from "./Battle";
+// import TimePicker from "./DatePicker";
+// import ModalExample from "./ModalLess";
+// import Form2 from "./Form2";
+// import BuiltModal from "./BuiltModal";
+// import NoStateDrawer from "./NoStateDrawer";
+// import DrawerP from "./DrawerP";
+// import StateDrawer from "./StateDrawer";
+// import StateModal from "./StateModal";
 import Map6 from "./map-app/Map6";
 import Map2 from "./map-app/Map2";
 import Map3 from "./map-app/Map3";
@@ -26,8 +26,6 @@ const App = () => (
   <BrowserRouter>
     <div>
       <ul className = "nav">
-        <li><NavLink exact activeClassName='active' to="/">Menu</NavLink></li>
-        <li><NavLink activeClassName='active' to="/battle">CardImage</NavLink></li>
   {/*         <li><NavLink activeClassName='active' to="/topics">DatePicker</NavLink></li>
           <li><NavLink activeClassName='active' to="/form">ModalLess</NavLink></li>
           <li><NavLink activeClassName='active' to="/form2">Form2</NavLink></li>
@@ -44,16 +42,7 @@ const App = () => (
       </ul>
 
       <Switch>
-      <Route exact path="/" component={Home}/>
-      <Route exact path="/battle" component={Battle}/>
-      <Route path="/topics" component={TimePicker}/>
-      <Route path="/form" component={ModalExample}/>
-      <Route path="/form2" component={Form2}/>
-      <Route path="/builtmodal" component={BuiltModal}/>
-      <Route path="/form4" component={NoStateDrawer}/>
-      <Route path="/statedrawer" component={StateDrawer}/>
-      <Route path="/form5" component={StateModal}/>
-      <Route path="/drawerP" component={DrawerP}/>
+      <Route exact path="/" component={Map6}/>
       <Route path="/map" component={Map6}/>
       <Route path="/map2" component={Map2} />
       <Route path="/map3" component={Map3} />

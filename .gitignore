@@ -1,4 +1,5 @@
 node_modules
 dist
+app/config.js
 app/components/awesome-possum
 package-lock.json

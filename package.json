@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "build": "webpack",
-    "start2": "webpack-dev-server --open"
+    "start2": "webpack-dev-server --open --port 5000"
   },
   "author": "",
   "license": "ISC",
