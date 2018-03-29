@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Marker from './Marker'
 import InfoWindow from './InfoWindow'
 import MapComponent from './MapComponent'
-import Lipsum from '../awesome-possum/lib/Lipsum'
+// import Lipsum from '../awesome-possum/lib/Lipsum'
 import {MAP_API_KEY} from '../../config'
 
 export default class MapContainer extends Component {

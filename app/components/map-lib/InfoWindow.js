@@ -6,7 +6,7 @@ import ReactDOMServer from 'react-dom/server'
 export class InfoWindow extends React.Component {
 
   componentDidMount() {
-    this.renderInfoWindow();
+    // this.renderInfoWindow();
   }
 
   componentDidUpdate(prevProps) {
@@ -17,6 +17,7 @@ export class InfoWindow extends React.Component {
     }
 
     if (map !== prevProps.map) {
+      console.log('renderInfoWindow maps');
       this.renderInfoWindow();
     }
 
@@ -25,11 +26,15 @@ export class InfoWindow extends React.Component {
     // }
 
     if (this.props.children !== prevProps.children) {
+      console.log('updateContent')
       this.updateContent();
     }
 
-    if ((this.props.visible !== prevProps.visible ||
-      this.props.marker !== prevProps.marker)){
+    // if ((this.props.visible !== prevProps.visible ||
+    if ((this.props.marker !== prevProps.marker)){//always true
+        console.log('marker',this.props.marker === prevProps.marker);
+        console.log('prev.marker',prevProps.marker);
+        console.log('props.marker',this.props.marker);
       // this.props.position !== prevProps.position)) {
       this.props.visible ?
         this.openWindow() :
@@ -47,6 +52,7 @@ export class InfoWindow extends React.Component {
     const iw = this.infowindow = new google.maps.InfoWindow({
       content: ''
     });
+    console.log('infowindowfunc', this.infowindow)
 
     // google.maps.event
     //   .addListener(iw, 'closeclick', this.onClose.bind(this))
@@ -68,6 +74,7 @@ export class InfoWindow extends React.Component {
   // }
 
   openWindow() {
+    console.log('openWindow', this.infowindow)
     this.infowindow.open(this.props.map, this.props.marker);
   }
 
@@ -80,12 +87,13 @@ export class InfoWindow extends React.Component {
   // }
 
   updateContent() {
-    // const content = this.renderChildren();
+    const content = this.renderChildren();
     // console.log(content)
-    // this.infowindow.setContent(content);
+    this.infowindow.setContent(content);
   }
 
   closeWindow() {
+    console.log('closeWindow')
     this.infowindow.close();
   }
 
